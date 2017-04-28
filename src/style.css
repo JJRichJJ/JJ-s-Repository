@@ -1,5 +1,10 @@
+body {
+  margin: 0;
+}
+
 .house-status {
-  border: 1px solid #999;
+  background-color: #f0f0f0;
+  font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
 }
 
 .house-status p {
@@ -11,6 +16,7 @@
   position: relative;
   overflow: hidden;
   padding-bottom: 1rem;
+  border-bottom: 1px solid #dfdfdf;
 }
 
 .house-status__check-time {
@@ -23,6 +29,7 @@
 
 .house-status__check-number {
   text-align: center;
+  font-size: .9rem;
 }
 
 .house-status__check-number .label {
@@ -45,12 +52,15 @@
   width: 7.5rem;
   height: 7.5rem;
   overflow: hidden;
-  margin: 5% auto;
+  margin: 1.5rem auto .5rem;
 }
 
 .house-status__house-info {
   padding: 5% 0;
-  background-color: #f2f2f2;
+  background-color: #fff;
+  margin-bottom: .6rem;
+  border-bottom: 1px solid #dfdfdf;
+  border-top: none;
 }
 
 .house-status__house-detail {
@@ -58,8 +68,8 @@
 }
 
 .house-status__type {
-  background-color: #ccc;
-  color: #fff;
+  background-color: #e1e1e1;
+  color: #999;
   border-radius: 6px;
   width: 9rem;
   text-align: center;
@@ -69,67 +79,94 @@
 }
 
 .house-status__address {
-  margin: 1.2rem auto;
-  width: 7rem;
-  color: #333;
+  margin: 1.2rem auto 0;
+  color: #999;
+  font-size: .9rem;
+  display: inline-table;
 }
+
 .house-status__address i {
-  /*background-image: url('./public/placeholder.png');*/
-  width: 32px;
-  height: 32px;
+  background-image: url('../public/placeholder.png');
+  width: 22px;
+  height: 21px;
+  margin-right: .5rem;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  vertical-align: sub;
 }
+
 .house-status__detail {
-  overflow: hidden;
-  width: 10rem;
   margin: 1rem auto;
 }
 
 .house-status__name,
 .house-status__area {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #333;
 }
 
-.house-status__name {
-  float: left;
-}
-
 .house-status__area {
-  float: right;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fe5054;
+  font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
 }
 
 .house-status__area span {
   font-size: .8rem;
   font-weight: normal;
+  color: #999;
 }
 
 .house-status__floor {
-  color: #333;
+  color: #999;
+  font-size: .9rem;
+  display: inline-table;
 }
-.house-status__floor {
-  /*background-image: url('./public/front.png');*/
-  width: 32px;
-  height: 32px;
+
+.house-status__floor i {
+  background-image: url('../public/front.png');
+  background-repeat: no-repeat;
+  background-size: 80%;
+  width: 26px;
+  height: 22px;
+  display: inline-block;
+  margin-right: .5rem;
+  vertical-align: sub;
 }
 
 .house-status__all-status {
-  background-color: #e4e4e4;
+  border-top: 1px solid #dfdfdf;
+  background-color: #fff;
   padding: 5% 0;
   overflow: hidden;
 }
-.house-status__status-title i {
-  /*background-image: url('./public/flash.png');*/
-  width: 32px;
-  height: 32px;
+
+.house-status__status-title {
+  background-color: #fbfbfb;
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+  width: 13.5rem;
+  margin: 0 auto;
 }
+
+.house-status__status-title i {
+  background-image: url('../public/warning.png');
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  vertical-align: sub;
+  margin: 0 .5rem;
+}
+
 .house-status__status-title .title {
-  background-color: #ffcc33;
-  color: white;
-  width: 60%;
+  color: #999;
   text-align: center;
   font-size: .9rem;
   line-height: 1.8rem;
+  display: inline-block;
   margin: 0 auto;
 }
 
@@ -137,7 +174,7 @@
   list-style: none;
   padding: 0;
   width: 90%;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
 }
 
 .house-status__status-types li {
@@ -145,14 +182,15 @@
   color: #fff;
   font-size: .8rem;
   width: 48%;
-  border-radius: 10px;
+  border-radius: 20px;
+  border: 1px solid #dfdfdf;
   overflow: hidden;
   line-height: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .house-status__status-types li:nth-child(odd) {
-  margin-right: 4%;
+  margin-right: 2%;
 }
 
 .house-status__status-type,
@@ -163,24 +201,29 @@
 }
 
 .house-status__status-type {
-  background-color: #999;
+  background-color: #fff;
+  color: #999;
 }
 
 .house-status__status {
-  background-color: #51d4fb;
+  background-color: #1492ff;
 }
 
 .no-result {
-  /*background: url('./public/icon_sorry.png') no-repeat center/40% #f2f2f2;*/
   text-align: center;
   color: #999;
-  border: 1px solid #999;
+}
+
+.no-result img {
+  width: 60%;
+  margin-top: 30%;
 }
 
 .no-result__tips {
-  margin-top: 50%;
+  margin-top: 10%;
+  margin-bottom: 40%;
 }
 
 .no-result__tips p {
-  margin: 0;
+  margin-bottom: .5rem;
 }

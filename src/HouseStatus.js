@@ -44,27 +44,27 @@ class HouseStatus extends Component {
           </div>
           <ul className="house-status__status-types">
             <li>
-              <div className="house-status__status-type">抵押状态：</div>
+              <div className="house-status__status-type">抵押状态</div>
               <div className="house-status__status">{ housingInfo.isMortgaged }</div>
             </li>
             <li>
-              <div className="house-status__status-type">锁定状态：</div>
+              <div className="house-status__status-type">锁定状态</div>
               <div className="house-status__status">{ housingInfo.status ? '未锁定': '已锁定'}</div>
             </li>
             <li>
-              <div className="house-status__status-type">限制状态：</div>
+              <div className="house-status__status-type">限制状态</div>
               <div className="house-status__status">{ housingInfo.isRestricted }</div>
             </li>
             <li>
-              <div className="house-status__status-type">查封状态：</div>
+              <div className="house-status__status-type">查封状态</div>
               <div className="house-status__status">{ housingInfo.isSealUp }</div>
             </li>
             <li>
-              <div className="house-status__status-type">权属状态：</div>
+              <div className="house-status__status-type">权属状态</div>
               <div className="house-status__status">{ housingInfo.isHaveRight }</div>
             </li>
             <li>
-              <div className="house-status__status-type">出租状态：</div>
+              <div className="house-status__status-type">出租状态</div>
               <div className="house-status__status">{ housingInfo.isLeased ? housingInfo.isLeased : '未知' }</div>
             </li>
           </ul>
