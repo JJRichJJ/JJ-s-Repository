@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import HouseStatus from './HouseStatus'
 import NoResult from './NoResult'
 
+import './style.css'
+
 const API_URL = 'http://20.20.20.120/DataShare/api/HousingVerification/GetHousingInfoByCode?HousingVerificationGUID='
 
 function getParameterByName(name, url) {

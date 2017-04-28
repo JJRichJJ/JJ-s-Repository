@@ -26,7 +26,13 @@ module.exports = {
   ],
   module: {
     rules: [
-      {
+      { test: /\.woff(\?.*)?$/,  loader: 'url-loader' },
+      { test: /\.woff2(\?.*)?$/, loader: 'url-loader' },
+      { test: /\.otf(\?.*)?$/,   loader: 'file-loader' },
+      { test: /\.ttf(\?.*)?$/,   loader: 'url-loader' },
+      { test: /\.eot(\?.*)?$/,   loader: 'file-loader' },
+      { test: /\.svg(\?.*)?$/,   loader: 'url-loader' },
+      { test: /\.(png|jpg)$/,    loader: 'url-loader' }, {
         test: /\.js$/,
         include: path.join(__dirname, 'src'),
         use: {

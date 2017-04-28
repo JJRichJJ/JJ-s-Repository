@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import Select from 'react-select'
 import PropTypes from 'prop-types'
-import './style.css'
 
 function datetimeConvert(UTCDate) {
   const options = {

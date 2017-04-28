@@ -50,10 +50,12 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
     "node-sass": "^4.5.2",
     "rimraf": "^2.4.3",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
     "webpack": "^2.3.3",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.9.1"
@@ -61,9 +63,7 @@
   "dependencies": {
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.5.2",
-    "react-dd-menu": "^2.0.0",
     "react-dom": "^15.5.4",
-    "react-select": "^1.0.0-rc.3",
     "whatwg-fetch": "^2.0.3"
   }
 }
