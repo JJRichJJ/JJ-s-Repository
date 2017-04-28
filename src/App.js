@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 
 import HouseStatus from './HouseStatus'
 import NoResult from './NoResult'
+import getDrupalApiInstance from './DrupalApi'
 
 import './style.css'
 
-const API_URL = 'http://20.20.20.120/DataShare/api/HousingVerification/GetHousingInfoByCode?HousingVerificationGUID='
+import HourGlass from './assets/hourglass.svg'
+
+const api = getDrupalApiInstance()
 
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
@@ -22,24 +25,16 @@ export class App extends Component {
     super(props)
     
     this.state = {
-      housingInfo: {}
+      housingInfo: {},
+      loaded: false
     }
   }
   
   componentDidMount() {
-    fetch(API_URL + getParameterByName('vcode'), {
-      headers: {
-	'AppKey': '72f73ece-a58e-4bd1-abea-f6a4f2b08896',
-	'AppSecret': '123456'
-      }
-    }).then((response) => {
-      if (!response.ok) {
-        Promise.reject(response)
-      }
-      return response.json()
-    }).then((json) => {
+    api.fetchHousingVerification(getParameterByName('vcode')).then((json) => {
       this.setState({
-	housingInfo: json
+	housingInfo: json,
+	loaded: true
       })
     }).catch((error) => {
       console.error(error)
@@ -47,11 +42,11 @@ export class App extends Component {
   }
   
   render() {
-    const housingInfo = this.state.housingInfo
+    const { housingInfo, loaded } = this.state
     
-    let content = <div className="loading">Loading...</div>
+    let content = <div className="loading"><img src={ HourGlass } />正在努力加载数据...</div>
 
-    if (housingInfo) {
+    if (loaded) {
       if (housingInfo.existence) {
 	content = <HouseStatus housingInfo={housingInfo} />
       }

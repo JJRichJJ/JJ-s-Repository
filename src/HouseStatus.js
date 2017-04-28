@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import Find from './assets/find.svg'
+
 function datetimeConvert(UTCDate) {
   const options = {
     year: 'numeric', month: 'numeric', day: 'numeric',
@@ -19,7 +21,7 @@ class HouseStatus extends Component {
         <div className="house-status__header">
           <div className="house-status__check-time">核验时间：{ datetimeConvert(housingInfo.verificationTime) }</div>
           <div className="house-status__check">
-            <div className="house-status__check-headpic"><img src="../public/building.png" alt="头像"/></div>
+	    <div className="house-status__check-headpic"><img src={Find} alt="找房"/></div>
             <div className="house-status__check-number">
               <p className="label">核验编号</p>
               <p className="number">210388281999983</p>

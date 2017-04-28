@@ -1,10 +1,10 @@
 body {
   margin: 0;
+  font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
 }
 
 .house-status {
   background-color: #f0f0f0;
-  font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
 }
 
 .house-status p {
@@ -53,6 +53,13 @@ body {
   height: 7.5rem;
   overflow: hidden;
   margin: 1.5rem auto .5rem;
+  text-align: center;
+}
+
+.house-status__check-headpic img {
+  max-width: 75%;
+  margin-top: 10px;
+  height: 100px;
 }
 
 .house-status__house-info {
@@ -226,4 +233,18 @@ body {
 
 .no-result__tips p {
   margin-bottom: .5rem;
+}
+
+.loading {
+  position: absolute;
+  text-align: center;
+  color: #666666;
+  top: 49%;
+  width: 100%;
+  line-height: 2rem;
+}
+
+.loading img {
+  margin-right: 5px;
+  vertical-align: middle;
 }

@@ -46,6 +46,10 @@ export class DrupalApi {
   fetchGlobal() {
     return this.fetchData('restful/components/cnnbfdc_global/base_info', 'POST')
   }
+  
+  fetchHousingVerification(guid) {
+    return this.fetchData('restful/components/cnnbfdc_global/housing_verification_info?guid=' + guid, 'POST')
+  }
 
   fetchFacet(facetName) {
     return this.fetchGlobal().then((json) => {
