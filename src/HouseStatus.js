@@ -4,12 +4,17 @@ import PropTypes from 'prop-types'
 import Find from './assets/find.svg'
 
 function datetimeConvert(UTCDate) {
+  if (!global.Intl) {
+    return UTCDate
+  }
+  
   const options = {
     year: 'numeric', month: 'numeric', day: 'numeric',
     hour: 'numeric', minute: 'numeric', second: 'numeric',
   }
   const date = new Date(Date.parse(UTCDate))
-  return Intl.DateTimeFormat('zh-CN', options).format(date)
+  date.setHours(date.getHours() - 8)
+  return Intl.DateTimeFormat('ZH-CN', options).format(date)
 }
 
 class HouseStatus extends Component {
@@ -23,8 +28,9 @@ class HouseStatus extends Component {
           <div className="house-status__check">
 	    <div className="house-status__check-headpic"><img src={Find} alt="找房"/></div>
             <div className="house-status__check-number">
-              <p className="label">核验编号</p>
-              <p className="number">210388281999983</p>
+              <p className="label">房源核验码</p>
+	      <p className="number">{housingInfo.verifictionCode}</p>
+	      <p className="publish-type">{housingInfo.publishState}</p>
             </div>
           </div>
         </div>
@@ -34,9 +40,9 @@ class HouseStatus extends Component {
             <div className="house-status__address"><i></i>{ housingInfo.district }</div>
             <div className="house-status__detail">
               <p className="house-status__name">{ housingInfo.compoundName }</p>
-              <p className="house-status__area">{ housingInfo.buildingArea} <span>平米</span></p>
+              <p className="house-status__area"><span>约</span>{ Math.ceil(housingInfo.buildingArea)} <span>平米</span></p>
             </div>
-            <div className="house-status__floor"><i></i>所在{ housingInfo.locationLayer}层/总共{ housingInfo.totalLayers }层</div>
+            <div className="house-status__floor"><i></i>总共{ housingInfo.totalLayers }层</div>
           </div>
         </div>
         <div className="house-status__all-status">

@@ -51,6 +51,7 @@
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
+    "intl": "^1.2.5",
     "node-sass": "^4.5.2",
     "rimraf": "^2.4.3",
     "sass-loader": "^6.0.3",

@@ -32,7 +32,8 @@ module.exports = {
       { test: /\.ttf(\?.*)?$/,   loader: 'url-loader' },
       { test: /\.eot(\?.*)?$/,   loader: 'file-loader' },
       { test: /\.svg(\?.*)?$/,   loader: 'url-loader' },
-      { test: /\.(png|jpg)$/,    loader: 'url-loader' }, {
+      { test: /\.(png|jpg)$/,    loader: 'url-loader' },
+      {
         test: /\.js$/,
         include: path.join(__dirname, 'src'),
         use: {

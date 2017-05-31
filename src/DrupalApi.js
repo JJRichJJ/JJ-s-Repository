@@ -10,7 +10,7 @@ export class DrupalApi {
     this.fetchCache = new Map()
 
     if (typeof Drupal === 'undefined') {
-      this.config.basePath = 'http://esf.test.fyitc.com/'
+      this.config.basePath = 'http://esf.cnnbfdc.com/'
     }
   }
 

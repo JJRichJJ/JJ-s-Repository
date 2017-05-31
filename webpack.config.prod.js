@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/public/'
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -28,30 +28,47 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel-loader'],
-      include: path.join(__dirname, 'src')
-    }, {
-      test: /\.scss$/,
-      use: [{
-        loader: 'style-loader' // creates style nodes from JS strings
-      }, {
-        loader: 'css-loader',
-        options: {
-          module: true,
-          camelCase: true
+    rules: [
+      { test: /\.woff(\?.*)?$/,  loader: 'url-loader' },
+      { test: /\.woff2(\?.*)?$/, loader: 'url-loader' },
+      { test: /\.otf(\?.*)?$/,   loader: 'file-loader' },
+      { test: /\.ttf(\?.*)?$/,   loader: 'url-loader' },
+      { test: /\.eot(\?.*)?$/,   loader: 'file-loader' },
+      { test: /\.svg(\?.*)?$/,   loader: 'url-loader' },
+      { test: /\.(png|jpg)$/,    loader: 'url-loader' },
+      {
+        test: /\.js$/,
+        include: path.join(__dirname, 'src'),
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
         }
       }, {
-        loader: 'sass-loader',
-      }]
-    }, {
-      test: /\.css$/,
-      use: [{
-        loader: 'style-loader'
+        test: /\.scss$/,
+        use: [{
+          loader: 'style-loader' // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader',
+          options: {
+            module: true,
+            camelCase: true
+          }
+        }, {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: false
+          }
+        }]
       }, {
-        loader: 'css-loader'
-      }]
-    }]
+        test: /\.css$/,
+        use: [{
+          loader: 'style-loader' // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader'
+        }]
+      }
+    ]
   }
 };

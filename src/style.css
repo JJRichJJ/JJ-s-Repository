@@ -20,7 +20,7 @@ body {
 }
 
 .house-status__check-time {
-  color: #e4e4e4;
+  color: #999999;
   font-size: .7rem;
   right: 5px;
   top: 5px;
@@ -247,4 +247,11 @@ body {
 .loading img {
   margin-right: 5px;
   vertical-align: middle;
+}
+
+.publish-type {
+  line-height: 2.5rem;
+  color: #999;
+  font-size: 12px;
+  text-align: center;
 }
